@@ -2,6 +2,8 @@
 
 Flask RESTful API starter template ready to deploy on Railway (`railway.app`), with a clean folder structure, SOLID design, and a standardized response shape.
 
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/flask-restful-api?referralCode=asepsp&utm_medium=integration&utm_source=template&utm_campaign=generic)
+
 ### Features
 
 - **Clean folder structure** using an application factory (`app/`).
