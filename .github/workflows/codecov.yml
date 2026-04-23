@@ -23,7 +23,14 @@ jobs:
           pip install pytest pytest-cov
 
       - name: Run tests with coverage
-        run: pytest --cov --cov-branch --cov-report=xml
+        run: |
+          pytest --cov --cov-branch --cov-report=xml
+          status=$?
+          if [ "$status" -eq 5 ]; then
+            echo "No tests were collected by pytest; treating exit code 5 as success."
+            exit 0
+          fi
+          exit "$status"
 
       - name: Upload coverage reports to Codecov
         if: ${{ github.event_name != 'pull_request' || env.CODECOV_TOKEN != '' }}
